@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-key */
-import { SubMenu } from "../submenu/component"
+import { Dish } from "../dish/component"
 
 export const Menu = ({ menu }) =>{
     return <ul>
       {
         menu.map(submenu => (
-            <li><SubMenu name={submenu.name} /></li>
+            <li><Dish name={submenu.name} /></li>
         ))
       }
     </ul>
