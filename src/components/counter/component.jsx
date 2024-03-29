@@ -1,17 +1,14 @@
-import { useState } from "react";
-
-export const Counter = () => {
-    const [count, setCount] = useState(0);
-
+export const Counter = ({value, onChange, step = 1, min = 0, max = 5}) => {
+    
     return (
         <div>
-            <button onClick={() => setCount(count-1)}
-            disabled={count === 0}>
+            <button onClick={() => onChange(value-step)}
+            disabled={value <= min}>
                 -
             </button>
-            {count}
-            <button onClick={() => setCount(count+1)}
-            disabled={count === 5}>
+            {value}
+            <button onClick={() => onChange(value+step)}
+            disabled={value >= max}>
                 +
             </button>
         </div>

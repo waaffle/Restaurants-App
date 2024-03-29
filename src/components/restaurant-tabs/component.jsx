@@ -5,12 +5,11 @@ export const RestaurantTabs = ({ restaurants, currentRestaurantIndex, onTabClick
 
     return (
         <div>
-            {restaurants.map((restaurant, index) => (
-                <Tab 
+            {restaurants?.map((restaurant, index) => (
+                <Tab key={restaurant.name}
                 title={restaurant.name}
                 onClick={() => {
                     onTabClick(index)
-                    localStorage.setItem("currentRestaurantIndex", index)
                 }}
                 isActive={currentRestaurantIndex === index}
                 />
