@@ -1,12 +1,14 @@
-import { useState } from "react";
 import { Counter } from "../counter/component";
+import { useCounter } from "../../hooks/useCounter";
 
 export const Dish = ({ name }) => {
-    const [count, setCount] = useState(0);
+
+    const {value, increment, decrement} = useCounter();
+
     return (
         <div>
         <span>{name}</span>
-        <Counter key={name} value={count} onChange={setCount}/>
+        <Counter value={value} increment={increment} decrement={decrement}/>
         </div>
     )
 }
