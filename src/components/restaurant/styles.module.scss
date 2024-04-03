@@ -1,0 +1,36 @@
+.root{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.title2{
+    font-size: 56px;
+    margin: 30px;
+}
+
+.menu{
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+.title3{
+    font-size: 24px;
+    margin-top: 0px;
+    margin-bottom: 50px;
+}
+
+.reviews{
+    width: 100%;
+}
+
+
+

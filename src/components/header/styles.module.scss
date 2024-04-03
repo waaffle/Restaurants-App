@@ -1,0 +1,38 @@
+.root{
+    background-color: rgba(126,25,255, 0.2);
+    width: 100vw;
+    color: rgb(45, 12, 87);
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.headerInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.title{
+    font-size: 32px;
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.myButton{
+    width: 100px;
+}
+
+.authorization{
+    display: flex;
+    flex-direction: column;
+}
+
+.dark{
+    color: #fff;
+}
+

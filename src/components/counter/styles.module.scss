@@ -1,0 +1,16 @@
+.root{
+    display: flex;
+    align-items: center;
+}
+.number{
+    width: 20px;
+}
+
+.action{
+    &:first-child{
+        margin-right: 10px;
+    }
+    &:last-child{
+        margin-left: 10px;
+    }
+}

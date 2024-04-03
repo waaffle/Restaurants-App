@@ -1,0 +1,27 @@
+@mixin button-reset {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.myButton{
+    @include button-reset;
+    background-color: rgb(11, 206, 131);
+    color: rgb(45, 12, 87);
+    padding: 10px;
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+
+}
+.dark{
+    background-color: rgb(0, 173, 181);
+    color: #fff;
+}
+
+.disabled{
+    background-color: rgba(11, 206, 131, 0.212);
+}

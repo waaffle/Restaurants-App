@@ -1,0 +1,28 @@
+@mixin button-reset {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+.root {
+    @include button-reset;
+    padding: 10px;
+    width: 170px;
+    background-color: #fff;
+    font-size: 22px;
+    border-radius: 30px;
+    color: rgb(149, 134, 168);
+
+    &:hover{
+        color: rgb(108, 14, 228);
+        font-weight: 500;
+    }
+}
+
+.active{
+    background-color: rgb(226, 203, 255);
+    color: rgb(108, 14, 228);
+    font-weight: 500;
+}
