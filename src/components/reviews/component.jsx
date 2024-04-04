@@ -7,7 +7,7 @@ export const Reviews = ({ reviews }) => {
     return <ul className={classNames(styles.root)}>
     {
         reviews.map(review => (
-            <li><Review text = {review.text} /></li>
+            <li key={review.text}><Review text = {review.text} /></li>
         ))
       }
     </ul>

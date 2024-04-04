@@ -10,7 +10,7 @@ export const Button = ({
     className,
   }) => {
   
-    const theme = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext)
     return (
       <button
         onClick={onClick}

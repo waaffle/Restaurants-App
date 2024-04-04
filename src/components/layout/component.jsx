@@ -6,7 +6,8 @@ import { ThemeContext } from "../../contexts/ThemeContext"
 import classNames from "classnames"
 
 export const Layout = ({ children }) => {
-    const theme = useContext(ThemeContext);
+    const {theme} = useContext(ThemeContext);
+    
     return (
         <div className={classNames(
             theme === "dark" && styles.dark
