@@ -4,8 +4,6 @@ import classNames from "classnames"
 import { Menu } from "../menu/component"
 import { Reviews } from "../reviews/component"
 import styles from './styles.module.scss'
-import { useContext } from "react"
-import { ThemeContext } from "../../contexts/ThemeContext"
 
 export const Restaurant = ({restaurant}) => {
   if (!restaurant) return null;

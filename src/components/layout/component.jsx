@@ -1,16 +1,16 @@
-import { useContext } from "react"
+import classNames from "classnames"
+import { useCurrentTheme } from "../../contexts/ThemeContext"
 import { Footer } from "../footer/component"
 import { Header } from "../header/component"
 import styles from './styles.module.scss'
-import { ThemeContext } from "../../contexts/ThemeContext"
-import classNames from "classnames"
 
 export const Layout = ({ children }) => {
-    const {theme} = useContext(ThemeContext);
+    
+     const {theme} = useCurrentTheme();
     
     return (
         <div className={classNames(
-            theme === "dark" && styles.dark
+           (theme === "dark") && styles.dark
         )}>
   
         <Header className={styles.externalHeader}/>

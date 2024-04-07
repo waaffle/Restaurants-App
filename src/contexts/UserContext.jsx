@@ -1,13 +1,22 @@
-import React, { useMemo, useState } from "react";
+/* eslint-disable react-refresh/only-export-components */
+import React, { useCallback, useContext, useState } from "react";
 
-export const UserContext = React.createContext("notAuthorized");
+export const UserContext = React.createContext(null);
 
-export const UserProvider = ({ children }) => {
+export const useUser = (defaultUser = null) => {
+    const [user, setUser] = useState(defaultUser);
 
-    const [user, setUser] = useState("notAuthorized");
+    const logout = useCallback(() => {
+        setUser(() => null);
+    }, [])
 
+    return {
+        user,
+        login: setUser,
+        logout
+    }
+}
 
-    return <UserContext.Provider value={ useMemo(() => ({user, setUser}), [user]) }>
-        {children}
-    </UserContext.Provider>
-};
+export function useCurrentUser(){
+    return useContext(UserContext);
+}

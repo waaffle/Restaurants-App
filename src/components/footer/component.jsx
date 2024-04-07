@@ -1,10 +1,10 @@
-import { useContext } from 'react'
-import styles from './styles.module.scss'
-import classNames from 'classnames'
-import { ThemeContext } from '../../contexts/ThemeContext';
+import classNames from 'classnames';
+import { useCurrentTheme } from '../../contexts/ThemeContext';
+import styles from './styles.module.scss';
 
 export const Footer = ({ className }) => {
-    const {theme} = useContext(ThemeContext);
+    const {theme} = useCurrentTheme();
+    console.log(theme)
     
     return (
     <footer className={classNames(styles.root, className, 

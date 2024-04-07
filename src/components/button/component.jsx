@@ -1,7 +1,6 @@
 import classNames from "classnames";
-import styles from './styles.module.scss'
-import { useContext } from "react";
-import { ThemeContext } from "../../contexts/ThemeContext";
+import { useCurrentTheme } from "../../contexts/ThemeContext";
+import styles from './styles.module.scss';
 
 export const Button = ({
     children,
@@ -10,7 +9,7 @@ export const Button = ({
     className,
   }) => {
   
-    const {theme} = useContext(ThemeContext)
+    const {theme} = useCurrentTheme();
     return (
       <button
         onClick={onClick}
@@ -20,7 +19,7 @@ export const Button = ({
           className,
           {
             [styles.disabled]: disabled,
-            [styles.dark]: theme === 'dark',
+            [styles.dark]: theme === "dark",
           }
         )}
       >

@@ -1,14 +1,18 @@
-import React, { useMemo, useState } from "react"
+/* eslint-disable react-refresh/only-export-components */
+import React, { useCallback, useContext, useState } from "react";
 
 export const ThemeContext = React.createContext("light");
 
-export const ThemeProvider = ({ children }) => {
+export const useTheme = (defaultValue = "light") => {
+    const [theme, setTheme] = useState(defaultValue);
 
-    const [theme, setTheme] = useState("light");
+    const toggleTheme = useCallback(() => {
+        setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
+    }, [])
 
-    return (
-        <ThemeContext.Provider value={useMemo(() => ({theme, setTheme}), [theme])}>
-            {children}
-        </ThemeContext.Provider>
-    )
+    return {theme, toggleTheme};
+}
+
+export function useCurrentTheme(){
+    return useContext(ThemeContext)
 }
