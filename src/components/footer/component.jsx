@@ -4,7 +4,6 @@ import styles from './styles.module.scss';
 
 export const Footer = ({ className }) => {
     const {theme} = useCurrentTheme();
-    console.log(theme)
     
     return (
     <footer className={classNames(styles.root, className, 
