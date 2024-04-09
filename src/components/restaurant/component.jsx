@@ -5,10 +5,11 @@ import { Menu } from "../menu/component"
 import { Reviews } from "../reviews/component"
 import styles from './styles.module.scss'
 import { useSelector } from "react-redux"
+import { selectRestaurantById } from "../../redux/entities/restaurant/selectors"
 
 export const Restaurant = ({restaurantId}) => {
 
-  const restaurant = useSelector((state) => state.restaurant.entities[restaurantId])
+  const restaurant = useSelector((state) => selectRestaurantById(state, restaurantId))
   if (!restaurant) return null;
 
   const {name, menu, reviews} = restaurant;
