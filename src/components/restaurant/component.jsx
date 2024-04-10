@@ -23,13 +23,13 @@ export const Restaurant = ({restaurantId}) => {
       {!!menu?.length && (
       <div className={styles.menu}>
         <h3 className={styles.title3}>Меню</h3>
-        <Menu menuIds = {menu} />
+        <Menu restaurantId = {restaurantId} />
       </div>)}
 
       {!!reviews?.length && (
       <div className={styles.reviews}>
         <h3 className={styles.title3}>Отзывы</h3>
-          <Reviews reviewsIds = {reviews} />
+          <Reviews restaurantId = {restaurantId} />
       </div>)}
 
       <br />

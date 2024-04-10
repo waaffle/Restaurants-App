@@ -6,5 +6,6 @@ import { userSlice } from "./entities/user";
 import { cartSlice } from "./ui/cart";
 
 export const store = configureStore({
-    reducer: combineSlices(dishSlice, restaurantSlice, reviewSlice, userSlice, cartSlice)
+    reducer: combineSlices(dishSlice, restaurantSlice, reviewSlice, userSlice, cartSlice),
+    middleware: (getDefaultMiddleWare) => getDefaultMiddleWare()
 })
