@@ -1,15 +1,12 @@
-import { useMemo } from "react";
-import { ThemeContext, useCurrentTheme } from "../../contexts/ThemeContext";
-import { Button } from "../button/component";
+import { ThemeContext } from "../../contexts/ThemeContext";
+import { ButtonContainer } from "../button/container";
 
-export const ThemeToggle = () => {
-    const {theme, toggleTheme} = useCurrentTheme();
+export const ThemeToggle = ({ headerTheme, toggleTheme, theme}) => {
     
-    const headerTheme = useMemo(() => ({theme: "light"}), []);
     return (
     <ThemeContext.Provider value = {headerTheme}>
-        <Button onClick={toggleTheme}>
+        <ButtonContainer onClick={toggleTheme}>
                 {theme}
-        </Button>
+        </ButtonContainer>
     </ThemeContext.Provider>
 )};

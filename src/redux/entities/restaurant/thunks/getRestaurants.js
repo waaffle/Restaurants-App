@@ -1,5 +1,5 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
 import { selectRestaurantIds } from "../selectors";
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getRestaurants = createAsyncThunk(
     "restaurant/getRestaurants",

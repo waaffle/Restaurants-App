@@ -1,9 +1,7 @@
 import classNames from 'classnames';
-import { useCurrentTheme } from '../../contexts/ThemeContext';
 import styles from './styles.module.scss';
 
-export const Footer = ({ className }) => {
-    const {theme} = useCurrentTheme();
+export const Footer = ({ className, theme }) => {
     
     return (
     <footer className={classNames(styles.root, className, 

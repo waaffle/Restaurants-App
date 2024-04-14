@@ -1,23 +1,20 @@
 import classNames from "classnames"
-import { useCurrentTheme } from "../../contexts/ThemeContext"
-import { Footer } from "../footer/component"
-import { Header } from "../header/component"
+import { FooterContainer } from "../footer/container"
+import { HeaderContainer } from "../header/container"
 import styles from './styles.module.scss'
 
-export const Layout = ({ children }) => {
-    
-     const {theme} = useCurrentTheme();
+export const Layout = ({ children, theme }) => {
     
     return (
         <div className={classNames(
            (theme === "dark") && styles.dark
         )}>
   
-        <Header className={styles.externalHeader}/>
+        <HeaderContainer className={styles.externalHeader}/>
         
             {children}
         
-        <Footer className={styles.externalFooter}/>
+        <FooterContainer className={styles.externalFooter}/>
         
         </div>
 )}

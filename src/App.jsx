@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import { useMemo } from 'react';
-import { Layout } from './components/layout/component';
-import { Restaurants } from './components/restaurants/component';
+import { LayoutContainer } from './components/layout/container';
+import { RestaurantsContainer } from './components/restaurants/container';
 import { ThemeContext, useTheme } from './contexts/ThemeContext';
 import { UserContext, useUser } from './contexts/UserContext';
 
@@ -18,9 +18,9 @@ export const App = () => {
     return (
         <ThemeContext.Provider value = { themeContextValue }>
             <UserContext.Provider value = { userContextValue }>
-                <Layout>
-                    <Restaurants />
-                </Layout>
+                <LayoutContainer>
+                    <RestaurantsContainer />
+                </LayoutContainer>
             </UserContext.Provider>
         </ThemeContext.Provider>
     );

@@ -1,16 +1,14 @@
 /* eslint-disable react/jsx-key */
-import { useSelector } from 'react-redux';
-import { RestaurantTab} from '../restaurant-tab/component';
-import styles from './styles.module.scss';
 import classNames from 'classnames';
-import { selectRestaurantIds } from '../../redux/entities/restaurant/selectors';
+import { RestaurantTabContainer } from '../restaurant-tab/container';
+import styles from './styles.module.scss';
 
-export const RestaurantTabs = ({currentRestaurantId, onTabClick }) => {
-    const restaurantsIds = useSelector(selectRestaurantIds)
+export const RestaurantTabs = ({restaurantIds, currentRestaurantId, onTabClick }) => {
+
     return (
         <div className={classNames(styles.root, styles.container)}>
-            {restaurantsIds?.map((restaurantId) => (
-                <RestaurantTab key={restaurantId}
+            {restaurantIds?.map((restaurantId) => (
+                <RestaurantTabContainer key={restaurantId}
                 restaurantId={restaurantId}
                 onClick={() => {
                     onTabClick(restaurantId)

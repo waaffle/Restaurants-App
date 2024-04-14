@@ -4,8 +4,9 @@ import { restaurantSlice } from "./entities/restaurant";
 import { reviewSlice } from "./entities/review";
 import { userSlice } from "./entities/user";
 import { cartSlice } from "./ui/cart";
+import { requestSlice } from "./ui//request/index";
 
 export const store = configureStore({
-    reducer: combineSlices(dishSlice, restaurantSlice, reviewSlice, userSlice, cartSlice),
+    reducer: combineSlices(dishSlice, restaurantSlice, reviewSlice, userSlice, cartSlice, requestSlice),
     middleware: (getDefaultMiddleWare) => getDefaultMiddleWare()
 })
