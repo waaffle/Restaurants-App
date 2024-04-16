@@ -13,8 +13,8 @@ export const getRestaurants = createAsyncThunk(
         return result;
     },
     {
-        condition: (_, { getState }) => {
-            !selectRestaurantIds(getState())?.length;
+        condition: ({forceReload = false} = {}, { getState }) => {
+            forceReload || !selectRestaurantIds(getState())?.length;
         }
     }
 )

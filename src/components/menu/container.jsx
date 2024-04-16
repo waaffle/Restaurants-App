@@ -8,9 +8,9 @@ import { Menu } from "./component";
 export const MenuContainer = ({restaurantId}) => {
 
     const menuIds = useSelector((state) => selectDishIdsByRestaurantId(state, restaurantId))
-    const  reviewsRequestStatus = useRequest(getDishIdsByRestaurantId, restaurantId);
+    const  menuRequestStatus = useRequest(getDishIdsByRestaurantId, restaurantId);
 
-    if (reviewsRequestStatus === REQUEST_STATUSES.pending){
+    if (menuRequestStatus === REQUEST_STATUSES.pending){
         return <div>Menu Loading...</div>
     }
 
