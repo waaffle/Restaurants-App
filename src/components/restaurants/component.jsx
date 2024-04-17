@@ -5,13 +5,14 @@ import { RestaurantContainer } from "../restaurant/container";
 
 const ACTIVE_RESTAURANT_INDEX_STORAGE_KEY = "currentRestaurantId";
 
-export const Restaurants = () => {
+export const Restaurants = ({ restaurants }) => {
 
     const [currentRestaurantId, setCurrentRestaurantId] = useState(() => 
     getStorageRestaurantId(ACTIVE_RESTAURANT_INDEX_STORAGE_KEY));
 
 return <div>
     <RestaurantTabsContainer
+    restaurants={restaurants}
     currentRestaurantId={currentRestaurantId}
     onTabClick={(currentRestaurantId) => {
         setCurrentRestaurantId(currentRestaurantId);

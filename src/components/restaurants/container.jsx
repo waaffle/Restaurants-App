@@ -1,17 +1,19 @@
-import { useRequest } from "../../hooks/useRequest";
-import { getRestaurants } from "../../redux/entities/restaurant/thunks/getRestaurants";
-import { REQUEST_STATUSES } from "../../redux/ui/request/constants";
+import { useGetRestaurantsQuery } from "../../redux/service/api";
 import { Restaurants } from "./component";
-import { RestaurantsSkeleton } from "./skeleton";
 
 
 export const RestaurantsContainer = () => {
-    const status = useRequest(getRestaurants)
+    const {data: restaurants, isFetching} = useGetRestaurantsQuery();
 
-    if ([REQUEST_STATUSES.pending, REQUEST_STATUSES.idle].includes(status)){
-        return <RestaurantsSkeleton />
-    } 
+    if(isFetching){
+        return <div>Restaurants Loading...</div>
+    }
+
+    if (!restaurants) {
+        return null;
+    }
+
     return ( 
-        <Restaurants />
+        <Restaurants restaurants={restaurants}/>
     )
 };

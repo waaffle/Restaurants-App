@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import styles from './styles.module.scss';
 
-export const Tab = ({title, isActive, onClick}) => {    
+export const Tab = ({title, isActive, onClick}) => {  
     return (
         <button className={
             classNames(

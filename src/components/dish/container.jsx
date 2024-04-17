@@ -1,25 +1,19 @@
-import { Dish } from "./component"
+import { useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useCurrentUser } from "../../contexts/UserContext";
-import { selectDishById } from "../../redux/entities/dish/selectors";
 import { decrementDish, incrementDish } from "../../redux/ui/cart";
 import { selectAmountDishById } from "../../redux/ui/cart/selectors";
-import { useCallback } from "react";
+import { Dish } from "./component";
 
-export const DishContainer = ({dishId}) => {
-
-    const dish = useSelector((state) => selectDishById(state, dishId));
-    const value = useSelector((state) => selectAmountDishById(state, dishId));
-
-
-    const dispatch = useDispatch();
-
-    const incrementCallback = useCallback(() => dispatch(incrementDish(dishId)), [dishId, dispatch]);
-    const decrementCallback = useCallback(() => dispatch(decrementDish(dishId)),[dishId, dispatch]);
-    
+export const DishContainer = ({dish}) => {
 
     const {user} = useCurrentUser();
 
-    if (!dish) return null;
-    return <Dish withCart={!!user} value={value} increment={incrementCallback} decrement={decrementCallback} name = {dish.name}/>
+    const value = useSelector((state) => selectAmountDishById(state, dish?.id));
+
+    const dispatch = useDispatch();
+    const incrementCallback = useCallback(() => dispatch(incrementDish(dish?.id)), [dish?.id, dispatch]);
+    const decrementCallback = useCallback(() => dispatch(decrementDish(dish?.id)),[dish?.id, dispatch]);
+
+    return <Dish withCart={!!user} value={value} increment={incrementCallback} decrement={decrementCallback} dish = {dish}/>
 };

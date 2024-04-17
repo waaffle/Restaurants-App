@@ -6,7 +6,7 @@ import { ReviewsContainer } from "../reviews/container"
 import styles from './styles.module.scss'
 
 export const Restaurant = ({restaurant}) => {
-
+  
   const {name, menu, reviews, id} = restaurant;
   return (
     <div className={classNames(styles.root, styles.container)}>

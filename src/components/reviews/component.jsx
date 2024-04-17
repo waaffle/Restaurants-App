@@ -2,12 +2,12 @@
 import classNames from "classnames";
 import { ReviewContainer } from "../review/container";
 import styles from './styles.module.scss';
-export const Reviews = ({ reviewsIds }) => {
+export const Reviews = ({ reviews }) => {
 
     return <ul className={classNames(styles.root)}>
     {
-        reviewsIds.map(reviewId => (
-            <li key={reviewId}><ReviewContainer reviewId = {reviewId} /></li>
+        reviews.map(review => (
+            <li key={review?.id}><ReviewContainer review = {review} /></li>
         ))
       }
     </ul>
