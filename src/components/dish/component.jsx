@@ -9,7 +9,6 @@ export const Dish = ({ withCart, value, increment, decrement, dish}) => {
             !!withCart && styles.authorization
         )}>
             <span className={styles.dishName}>{dish?.name}</span>
-            {console.log(dish)}
             <img className={styles.image} src={`/images/${dish?.name.replace(/ /g,"")}.jpg`} alt="" />
             {!!withCart &&
             <CounterContainer value={value} increment={increment} decrement={decrement}/>

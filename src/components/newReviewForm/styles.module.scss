@@ -1,0 +1,19 @@
+.root{
+    display: flex;
+    gap: 10px;
+}
+
+.button{
+    width: 150px;
+    text-align: center;
+    line-height: 1em;
+    padding: 10px 20px;
+}
+
+.input{
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
