@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCurrentUser } from "../../contexts/UserContext";
 import { decrementDish, incrementDish } from "../../redux/ui/cart";
 import { selectAmountDishById } from "../../redux/ui/cart/selectors";
-import { Dish } from "./component";
-import styles from './styles.module.scss'
+import { DishPage } from "./component";
 
-export const DishContainer = ({dish, restaurantId}) => {
+export const DishPageContainer = ({dish}) => {
 
     const {user} = useCurrentUser();
 
@@ -19,14 +18,12 @@ export const DishContainer = ({dish, restaurantId}) => {
     
 
     return (
-            <Dish 
-                className={styles.dish}
+            <DishPage 
                 withCart={!!user} 
                 value={value} 
                 increment={incrementCallback} 
                 decrement={decrementCallback} 
                 dish = {dish} 
-                restaurantId={restaurantId}
             />
     )
 };

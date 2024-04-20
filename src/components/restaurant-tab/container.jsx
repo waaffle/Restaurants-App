@@ -1,7 +1,7 @@
 import { useGetRestaurantsQuery } from "../../redux/service/api";
 import { Tab } from "../tab/component";
 
-export const RestaurantTabContainer = ({restaurantId, ...props}) => {
+export const RestaurantTabContainer = ({ restaurantId }) => {
     const {data: restaurant} = useGetRestaurantsQuery(undefined, {
         selectFromResult: (result) => ({
             ...result, 
@@ -12,5 +12,5 @@ export const RestaurantTabContainer = ({restaurantId, ...props}) => {
         return null;
     }
 
-    return <Tab {...props} title={restaurant?.name}/>
+    return <Tab restaurant={restaurant}/>
 };

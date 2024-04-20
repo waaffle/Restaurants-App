@@ -1,7 +1,10 @@
+import { useParams } from "react-router-dom";
 import { useGetMenuQuery } from "../../redux/service/api";
 import { Menu } from "./component";
 
-export const MenuContainer = ({restaurantId}) => {
+export const MenuContainer = () => {
+
+    const {restaurantId} = useParams();
 
     const {data: menu, isFetching} = useGetMenuQuery(restaurantId);
 
@@ -13,5 +16,5 @@ export const MenuContainer = ({restaurantId}) => {
         return null;
     }
 
-    return <Menu menu={menu}/>
+    return <Menu menu={menu} restaurantId={restaurantId}/>
 };

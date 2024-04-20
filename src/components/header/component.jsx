@@ -11,7 +11,7 @@ export const Header = ({ theme, className }) => {
             <div className={classNames(styles.container, styles.headerInner)}>
                 <ThemeToggleContainer />
                 <h1 className={styles.title}>
-                        HEADER
+                        FoodTime
                 </h1>
                 <UserButtonsContainer />
             </div>

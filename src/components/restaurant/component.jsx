@@ -1,26 +1,27 @@
 /* eslint-disable react/jsx-key */
 
 import classNames from "classnames"
-import { MenuContainer } from "../menu/container"
-import { ReviewsContainer } from "../reviews/container"
+import { MenuReviewsTabsContainer } from "../menuReviewsTabs/container"
 import styles from './styles.module.scss'
-import { NewReviewForm } from "../newReviewForm/component"
 
 export const Restaurant = ({restaurant}) => {
   
-  const {name, menu, reviews, id} = restaurant;
+  const {name, menu} = restaurant;
   return (
     <div className={classNames(styles.root, styles.container)}>
       <h2 className={styles.title2}>{name ? name : "NoName"}</h2>
       
 
-      {!!menu?.length && (
+      {/* {!!menu?.length && (
       <div className={styles.menu}>
         <h3 className={styles.title3}>Меню</h3>
-        <MenuContainer restaurantId = {id} />
-      </div>)}
+        <MenuContainer/>
+      </div>)} */}
 
-      {!!reviews?.length && (
+      {!!menu?.length && (
+      <MenuReviewsTabsContainer className={styles.tab} restaurant={restaurant}/>)}
+
+      {/* {!!reviews?.length && (
         <div>
           <h3 className={styles.title3}>Отзывы</h3>
           <div className={styles.reviews}>
@@ -28,7 +29,7 @@ export const Restaurant = ({restaurant}) => {
             <NewReviewForm restaurantId={id}></NewReviewForm>
           </div>
       </div>
-      )}
+      )} */}
 
       <br />
     </div>

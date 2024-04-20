@@ -1,0 +1,15 @@
+.root{
+    border: 1px solid rgb(175, 175, 175);
+    padding: 20px 20px; 
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+    align-items: center;
+}
+
+
+.dark{
+    background-color: rgba(57, 62, 70, 0.5);
+    border: 1px solid rgb(76, 82, 93);
+}

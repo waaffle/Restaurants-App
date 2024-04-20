@@ -1,6 +1,8 @@
+import { useCurrentTheme } from "../../contexts/ThemeContext";
 import { Review } from "./component";
 
-export const ReviewContainer = ({ review }) => {
+export const ReviewContainer = ({ review, className }) => {
+    const {theme} = useCurrentTheme();
 
-    return <Review userId={review.userId} text={review.text}/>
+    return <Review review={review} theme={theme} className={className}/>
 };

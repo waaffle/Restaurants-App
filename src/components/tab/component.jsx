@@ -1,16 +1,17 @@
 import classNames from 'classnames';
 import styles from './styles.module.scss';
+import { NavLink } from 'react-router-dom';
 
-export const Tab = ({title, isActive, onClick}) => {  
+export const Tab = ({restaurant}) => {  
     return (
-        <button className={
-            classNames(
-                styles.root,
+        <NavLink 
+        to={`/restaurants/${restaurant.id}`}
+        className={({isActive}) => 
+            classNames(styles.root,
                 {
                     [styles.active]: isActive
-                })} 
-            onClick={onClick} disabled={isActive}>
-            {title}
-        </button>
+                })}>
+            {restaurant.name}
+        </NavLink>
     )
 };

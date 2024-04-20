@@ -1,0 +1,19 @@
+.root{
+    width: 180px;
+    height: 50px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.active{
+    font-weight: 600;
+}
+
