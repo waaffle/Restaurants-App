@@ -1,4 +1,6 @@
+import classNames from "classnames";
+import styles from "./styles.module.scss"
 
-export const User = ({ name }) => {
-    return <span>{name}</span>
+export const User = ({ name, className }) => {
+    return <div className={classNames(styles.name,className)}>{name}</div>
 };

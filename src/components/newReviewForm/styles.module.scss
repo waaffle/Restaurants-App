@@ -1,19 +1,55 @@
 .root{
+    border: 1px solid rgb(175, 175, 175);
+    width: 100%;
+    padding: 20px 20px; 
+    background-color: white;
     display: flex;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    align-items: start;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.title{
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.dark{
+    background-color: rgba(57, 62, 70, 0.5);
+    border: 1px solid rgb(76, 82, 93);
 }
 
 .button{
     width: 150px;
     text-align: center;
-    line-height: 1em;
+    line-height: 0.8em;
     padding: 10px 20px;
+    background-color: #ffffff;
+    border: 2px solid rgb(11, 206, 131);
+    border-radius: 4px;
+    transition: 0.2s ease 0s;
+}
+
+.button:hover{
+    background-color: rgb(11, 206, 131);
+    
 }
 
 .input{
     background-clip: padding-box;
     border: 1px solid #bdbdbd;
-    border-radius: 30px;
+    border-radius: 3px;
     padding: 10px 20px;
+    margin-bottom: 5px;
+    font-size: inherit;
+    font-family: inherit;
+    resize: vertical;
 }
 

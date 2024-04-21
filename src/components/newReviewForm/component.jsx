@@ -1,18 +1,35 @@
+import classNames from "classnames";
 import { useState } from "react";
 import { Button } from "../button/component";
+import { RatingFormContainer } from "../ratingForm/container";
 import styles from './styles.module.scss';
-import classNames from "classnames";
 
-export const NewReviewForm = ({onClick, className}) => {
+export const NewReviewForm = ({onClick, theme, className}) => {
     
     const [text, setText] = useState();
+    const [rating, setRating] = useState();
 
-    return <form className={classNames(styles.root, className)} >
-        <input className={styles.input} type="text" placeholder="Ваш отзыв" onChange={(event)=> setText(event.target.value)}/>
+    const handleRatingChange = (rating) => {
+        setRating(parseInt(rating));
+    };
+
+    return <div className={classNames(styles.root, styles.container, className, 
+    theme === "dark" && styles.dark
+    )} >
+        <div className={styles.title}>Leave your review</div>
+        <textarea 
+            className={styles.input} 
+            type="text" placeholder="Your review" 
+            onChange={(event)=> setText(event.target.value)}
+            rows="4" cols="70"
+            />
+
+        <RatingFormContainer onRatingChange={handleRatingChange}/>
+
         <Button onClick={() => {
-            onClick(text);
+            onClick(text, rating);
             setText("");
         }}
-        className={styles.button}>Добавить отзыв</Button>
-    </form>
+        className={styles.button}>Add review</Button>
+    </div>
 };

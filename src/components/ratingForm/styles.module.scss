@@ -1,0 +1,57 @@
+.root{
+    position: relative;
+    font-size: 30px;
+    display: inline-block;
+    color:rgb(233, 233, 233);
+    margin-bottom: 20px;
+}
+
+.root::before{
+    display: block;
+    content: "★★★★★";
+}
+
+.ratingItems{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+
+.ratingItem{
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+}
+
+.ratingLabel{
+    flex: 0 0 20%;
+    height: 100%;
+    cursor: pointer;
+    color:rgb(233, 233, 233);
+}
+
+.ratingLabel::before{
+    display: block;
+    content: "★";
+    transition: color 0.3s ease 0s;
+}
+
+.ratingItem:checked,
+.ratingItem:checked ~ .ratingLabel{
+    color: rgb(241, 170, 4);
+}
+
+.ratingLabel:hover,
+.ratingLabel:hover ~ .ratingLabel,
+.ratingLabel:checked ~ .ratingLabel:hover{
+    color: rgba(241, 170, 4);
+}

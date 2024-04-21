@@ -1,15 +1,16 @@
-.dishContainer{
+
+.root{ 
     display: flex;
-    padding: 20px 10px;
+    border: 1px solid rgb(175, 175, 175);
+    display: flex;
+    padding: 20px 20px;
     align-items: center;
     align-content: center;
     justify-content: space-between;
     font-size: 20px;
-    border: 1px solid rgb(175, 175, 175);
 }
 
 .container {
-    width: 100%;
     max-width: 960px;
     margin: 0 auto;
 }
@@ -18,7 +19,7 @@
     width: 150px;
 }
 .text{
-
+    
 }
 
 .image{
@@ -36,9 +37,10 @@
 .link{
     text-decoration: none;
     color: inherit;
+    text-align: start;
 }
 
 .dish{
-    margin-bottom: 20px;
+    
 }
 
