@@ -11,9 +11,9 @@ export const Layout = ({ children, theme }) => {
         )}>
   
         <HeaderContainer className={styles.externalHeader}/>
-        
-            {children}
-        
+            <div className={styles.main}>
+                {children}
+            </div>
         <FooterContainer className={styles.externalFooter}/>
         
         </div>

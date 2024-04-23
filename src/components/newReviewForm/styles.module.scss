@@ -42,6 +42,17 @@
     
 }
 
+.darkButton{
+    color: rgb(45, 12, 87);
+    font-weight: 500;
+    border: 2px solid rgb(0, 173, 181);
+}
+
+.darkButton:hover{
+    background-color:  rgb(0, 173, 181);
+    
+}
+
 .input{
     background-clip: padding-box;
     border: 1px solid #bdbdbd;

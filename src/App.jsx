@@ -39,7 +39,7 @@ export const App = () => {
                             element: <RestaurantContainer />,
                             children: [
                                 {
-                                    path: '',
+                                    index: true,
                                     element: <Navigate to="menu" replace/>,
                                 },
                                 {

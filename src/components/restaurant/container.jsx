@@ -5,12 +5,14 @@ import { Restaurant } from "./component";
 export const RestaurantContainer = () => {
 
     const { restaurantId } = useParams();
-    
-    const {data: restaurant} = useGetRestaurantsQuery(undefined, {
-        selectFromResult: (result) => ({
-            ...result, 
-            data: result?.data.find(({id}) => (id === restaurantId))
-    })})
+
+    const {data: restaurants} = useGetRestaurantsQuery(undefined);
+
+    if (!restaurants) {
+        return null;
+    }
+
+    const restaurant = restaurants.find(({id}) => (id === restaurantId));
     
     if (!restaurant) return null;
 

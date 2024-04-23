@@ -26,10 +26,11 @@ export const NewReviewForm = ({onClick, theme, className}) => {
 
         <RatingFormContainer onRatingChange={handleRatingChange}/>
 
-        <Button onClick={() => {
+        <Button
+            onClick={() => {
             onClick(text, rating);
             setText("");
         }}
-        className={styles.button}>Add review</Button>
+        className={classNames(styles.button,theme === "dark" && styles.darkButton )}>Add review</Button>
     </div>
 };
