@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useCreateReviewMutation } from "../../redux/service/api";
 import { NewReviewForm } from "./component";
 import { useCurrentTheme } from "../../contexts/ThemeContext";
+import "../../styles.scss"
 
 export const NewReviewFormContainer = ({restaurantId, className}) => {
 
@@ -19,7 +20,7 @@ export const NewReviewFormContainer = ({restaurantId, className}) => {
     
 
     if (isLoading){
-        return <div>Saving...</div>
+        return <span className={"loader"}></span>
     }
     return <NewReviewForm theme={theme} onClick={onClick} className={className}/>
 };
