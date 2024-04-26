@@ -1,0 +1,32 @@
+.cart{
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.basket{
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.hr{
+    width: 98%;
+    border: none;
+    border-top: 1px solid rgb(45, 12, 87);
+
+}
+
+.totalSum{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 5px;
+    
+}
+
+.total{
+    margin-bottom: 5px;
+}

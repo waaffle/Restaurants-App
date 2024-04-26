@@ -14,3 +14,13 @@
 .main{
     min-height: 80vh;
 }
+
+#popover-container{
+    z-index: 100;
+    position: absolute;
+}
+
+#main{
+    z-index: 0;
+    position: relative;
+}

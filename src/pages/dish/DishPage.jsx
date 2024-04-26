@@ -1,17 +1,15 @@
-import { useLocation, useParams } from "react-router-dom";
-import { useGetMenuQuery } from "../../redux/service/api";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { selectDishById } from "../../redux/entities/dish/selectors";
 import { DishPageContainer } from "./container";
 
 export const DishPage = () => {
     const { dishId } = useParams();
-    const { state } = useLocation();
+
+    const dish = useSelector((state) => selectDishById(state, dishId)) || JSON.parse(sessionStorage.getItem('dish'));
+
+    sessionStorage.setItem('dish', JSON.stringify(dish));
     
-    const {data: dish} = useGetMenuQuery(state.restaurantId, {
-        selectFromResult: (result) => ({
-            ...result, 
-            data: result?.data.find(({id}) => (id === dishId))
-    })})
-    
-    if (!dish) return null;
+    if (!dish ) return null;
     return <DishPageContainer dish={dish} />
 };

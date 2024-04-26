@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { CounterContainer } from "../../components/counter/container";
 import styles from './styles.module.scss';
 
-export const DishPage = ({ withCart, value, increment, decrement, dish}) => {
+export const DishPage = ({ withCart, amount, onChange, dish}) => {
 
     return (
         <div className={classNames(styles.root, 
@@ -11,7 +11,7 @@ export const DishPage = ({ withCart, value, increment, decrement, dish}) => {
             <span className={styles.dishName}>{dish?.name}</span>
             <img className={styles.image} src={`/images/${dish?.name.replace(/ /g,"")}.jpg`} alt="" />
             {!!withCart &&
-            <CounterContainer value={value} increment={increment} decrement={decrement}/>
+            <CounterContainer amount={amount} onChange={onChange}/>
             }
         </div>
     )

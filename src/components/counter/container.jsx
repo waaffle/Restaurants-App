@@ -1,5 +1,6 @@
 import { Counter } from "./component";
 
-export const CounterContainer = (props) => {
-    return <Counter {...props}/>
+
+export const CounterContainer = ({amount, onChange, isCart}) => {
+    return <Counter amount={amount} onChange={onChange} isCart={isCart} />
 };

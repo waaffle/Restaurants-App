@@ -6,15 +6,18 @@ import styles from './styles.module.scss'
 export const Layout = ({ children, theme }) => {
     
     return (
-        <div className={classNames(
-           (theme === "dark") && styles.dark
-        )}>
-  
-        <HeaderContainer className={styles.externalHeader}/>
-            <div className={styles.main}>
-                {children}
+        <div>
+            <div id="popover-container"/>
+            <div id="main" className={classNames(
+            (theme === "dark") && styles.dark
+            )}>
+    
+                <HeaderContainer className={styles.externalHeader}/>
+                    <div className={styles.main}>
+                        {children}
+                    </div>
+                <FooterContainer className={styles.externalFooter}/>
+            
             </div>
-        <FooterContainer className={styles.externalFooter}/>
-        
         </div>
 )}

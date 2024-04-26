@@ -1,16 +1,19 @@
-// .root{
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     align-items: center;
-// }
-.container {
-    width: 100%;
+.root{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.container{
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
+}
+.dish {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    
 }
 .ul{
     list-style: none;
@@ -21,6 +24,9 @@
     padding-left: 0;
     justify-content: center;
     flex-direction: column;
-    align-items: start;
+}
+
+.dishMargin{
+    margin-bottom: 20px;
 }
 

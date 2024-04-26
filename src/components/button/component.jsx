@@ -7,6 +7,7 @@ export const Button = ({
     onClick,
     disabled,
     className,
+    isCart,
   }) => {
   
     const {theme} = useCurrentTheme();
@@ -16,6 +17,7 @@ export const Button = ({
         disabled={disabled}
         className={classNames(
           styles.myButton,
+          isCart && styles.buttonCart,
           className,
           {
             [styles.disabled]: disabled,
@@ -23,7 +25,9 @@ export const Button = ({
           }
         )}
       >
+        <div className={classNames(!!isCart && styles.children)}>
         {children}
+        </div>
       </button>
     );
   };

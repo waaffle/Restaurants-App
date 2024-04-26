@@ -21,6 +21,7 @@
     font-size: 32px;
     font-weight: 600;
     flex-grow: 1;
+    padding-left: 90px;
 }
 
 
@@ -28,3 +29,11 @@
     color: #fff;
 }
 
+.cart{
+    display: flex;
+    align-items: center;
+}
+
+.buttonMargin{
+    margin-right: 10px;
+}

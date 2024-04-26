@@ -3,24 +3,52 @@
     display: flex;
     border: 1px solid rgb(175, 175, 175);
     display: flex;
-    padding: 20px 20px;
-    align-items: center;
+    padding: 20px;
     align-content: center;
     justify-content: space-between;
     font-size: 20px;
+    transform: scale(1);
+    transition: box-shadow 0.3s, transform 0.3s;
 }
+.root:hover{
+    transform: scale(1.005);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(11, 206, 131,0.3);
+}
+
+.rootCart{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    border: none;
+    justify-content: space-between;
+    font-size: 14px;   
+}
+
+.rootCart:hover{
+    box-shadow: none;
+    transform: none;
+}
+
 
 .container {
     max-width: 960px;
     margin: 0 auto;
 }
 
+
+
 .dishName{
-    width: 150px;
-}
-.text{
+    font-weight: 500;
+    font-size: 22px;
     
 }
+
+.dishNameCart{
+    font-size: 14px;
+    font-weight: 400;
+}
+
 
 .image{
     width: 200px;
@@ -30,17 +58,34 @@
 }
 
 .authorization{
-    width: 400px;
-    padding: 50px 10px;
+    padding: 50px 40px;
+    text-align: start;
+    z-index: 0;
+}
+
+.authorizationCart{
+    padding: 5px;
+    z-index: 100;
 }
 
 .link{
     text-decoration: none;
     color: inherit;
+    flex-grow: 1;
+}
+
+.priceCart{
+    width: 24px;
+    text-align: center;
+}
+
+
+.title{
+    width: 200px;
     text-align: start;
 }
 
-.dish{
-    
-}
+
+
+
 

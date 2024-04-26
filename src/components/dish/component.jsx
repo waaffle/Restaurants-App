@@ -3,28 +3,45 @@ import { NavLink } from "react-router-dom";
 import { CounterContainer } from "../counter/container";
 import styles from './styles.module.scss';
 
-export const Dish = ({ withCart, value, increment, decrement, dish, restaurantId, className}) => {
+export const Dish = ({ withCart, dish, className, amount, setAmount, isCart}) => {
 
     return (
-        <div className={classNames( styles.root,styles.container)}>
-            <NavLink  className={classNames(styles.link, !!withCart && styles.authorization)} to={`/dish/${dish.id}`} state={{ restaurantId: restaurantId }}>
+        <div className={classNames( 
+            styles.root,
+            styles.container, 
+            className, 
+            !!withCart && styles.authorization, 
+            {
+                [styles.rootCart]: isCart,
+                [styles.authorizationCart]: isCart
+            }
+            )}>
 
-                {/* <div className={classNames(className,
-                    !!withCart && styles.authorization)}> */}
-
-                    <div className={classNames(styles.text,className)}>
-                        <div className={styles.dishName}>{dish?.name}</div>
-                        <div>{`${dish?.price} $`}</div>
-                    </div>
-
-                {/* </div> */}
-                    {/* <img className={styles.image} src={`/images/${dish?.name.replace(/ /g,"")}.jpg`} alt="" /> */}
-            </NavLink>
-                {!!withCart &&
-                <CounterContainer value={value} increment={increment} decrement={decrement}/>
-                }
+            {isCart ? <>
+                            <NavLink  className={classNames(styles.link)} to={`/dish/${dish?.id}`} >
+                                    <div className={classNames(styles.dishName, styles.dishNameCart)}>{dish?.name}</div>   
+                            </NavLink>
+                            {!!withCart &&
+                            <CounterContainer amount={amount} onChange={setAmount} isCart={isCart}/>
+                            }
+                            <div className={styles.priceCart}>{`${dish?.price}$`}</div>
+                        </>
+                      :
+                        <>
+                            <NavLink  className={classNames(styles.link)} to={`/dish/${dish?.id}`} >
+                                <div className={classNames(styles.title)}>
+                                    <div className={classNames(styles.dishName)}>{dish?.name}</div>
+                                    <div className={styles.price}>{`${dish?.price}$`}</div>
+                                </div>
+                            </NavLink>
+                            {!!withCart &&
+                            <CounterContainer amount={amount} onChange={setAmount} isCart={isCart}/>
+                            }
+                        </>
+            }
             
-            </div>
+            
+        </div>
         
     )
 }

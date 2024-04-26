@@ -7,6 +7,7 @@ export const RestaurantContainer = () => {
     const { restaurantId } = useParams();
 
     const {data: restaurants} = useGetRestaurantsQuery(undefined);
+    
 
     if (!restaurants) {
         return null;

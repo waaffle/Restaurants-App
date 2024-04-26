@@ -4,6 +4,7 @@ import { Reviews } from "./component";
 import styles from './styles.module.scss'
 import { NewReviewFormContainer } from "../newReviewForm/container";
 import classNames from "classnames";
+import "../../styles.scss";
 
 export const ReviewsContainer = () => {
     const {restaurantId} = useParams();
@@ -12,7 +13,7 @@ export const ReviewsContainer = () => {
     const { isFetching: usersFetching} = useGetUsersQuery();
 
     if (reviewsFetching || usersFetching){
-        return <div className={styles.load}>Reviews Loading...</div>
+        return <span className={classNames(styles.load, "loader")}></span>
     }
 
     return <div className={classNames(styles.reviews, styles.container)}>

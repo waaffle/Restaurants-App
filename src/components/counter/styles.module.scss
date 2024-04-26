@@ -4,6 +4,7 @@
 }
 .number{
     width: 20px;
+    text-align: center;
 }
 
 .action{
@@ -12,5 +13,14 @@
     }
     &:last-child{
         margin-left: 10px;
+    }
+}
+
+.actionCart{
+    &:first-child{
+        margin-right: 5px;
+    }
+    &:last-child{
+        margin-left: 5px;
     }
 }

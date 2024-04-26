@@ -8,7 +8,9 @@ export const dishSlice = createSlice({
     initialState: dishEntityAdapter.getInitialState(),
     extraReducers: (builder) => {
         builder.addCase(getDishIdsByRestaurantId.fulfilled,
-            (state, {payload: dishIds}) => dishEntityAdapter.upsertMany(state, dishIds)
+            (state, {payload: dishIds}) => {
+                dishEntityAdapter.upsertMany(state, dishIds)
+            }
         )
     }
 })
