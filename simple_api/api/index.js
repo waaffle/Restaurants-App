@@ -9,7 +9,7 @@ router.get("/restaurants", (req, res, next) => {
 });
 
 router.get("/restaurant/:restaurantId", (req, res, next) => {
-  const restaurantId = req.params?.restaurantId;
+  const restaurantId = req.params && req.params.restaurantId;
   let restaurant;
 
   if (restaurantId) {
@@ -37,7 +37,7 @@ router.get("/dishes", (req, res, next) => {
 });
 
 router.get("/dish/:dishId", (req, res, next) => {
-  const dishId = req.params?.dishId;
+  const dishId = req.params && req.params.dishId;
   let product;
 
   if (dishId) {
@@ -60,7 +60,7 @@ router.get("/reviews", (req, res, next) => {
 
 router.post("/review/:restaurantId", (req, res, next) => {
   const body = req.body;
-  const restaurantId = req.params?.restaurantId;
+  const restaurantId = req.params && req.params.restaurantId;
   const restaurant = restaurantId && getById(restaurants)(restaurantId);
   let newReview = {};
 
@@ -80,7 +80,7 @@ router.post("/review/:restaurantId", (req, res, next) => {
 
 router.patch("/review/:reviewId", (req, res, next) => {
   const body = req.body;
-  const reviewId = req.params?.reviewId;
+  const reviewId = req.params && req.params.reviewId;
   let updatedReview;
 
   if (reviewId) {

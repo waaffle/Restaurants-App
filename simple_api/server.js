@@ -17,11 +17,11 @@ app.use(function (req, res, next) {
 app.use(bodyParser.json());
 app.use("/api", api);
 
-app.listen(port, "localhost", function (err) {
+app.listen(port, "0.0.0.0", function (err) {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log("Listening at http://localhost:" + port);
+  console.log("Listening at http://176.109.103.144:" + port);
 });

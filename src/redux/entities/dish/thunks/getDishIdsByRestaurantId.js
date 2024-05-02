@@ -4,7 +4,7 @@ import { selectDishIds, selectDishIdsByRestaurantId } from "../selectors";
 export const getDishIdsByRestaurantId = createAsyncThunk(
     "dish/getDishIdsByRestaurantId",
     async (restaurantId) => {
-        const response = await fetch(`http://localhost:3001/api/dishes?restaurantId=${restaurantId}`);
+        const response = await fetch(`http://176.109.103.144:3001/api/dishes?restaurantId=${restaurantId}`);
 
         return response.json();
     },
